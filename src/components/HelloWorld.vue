@@ -110,13 +110,13 @@ import {
   CodeBlockHighlight,
   HardBreak,
   Heading,
-  History,
+  // History,
   HorizontalRule,
   Italic,
   Link,
   ListItem,
   OrderedList,
-  Placeholder,
+  // Placeholder,
   Table,
   TableHeader,
   TableCell,
@@ -133,7 +133,151 @@ export default {
     EditorMenuBar
   },
   data() {
-    const savedJson = `{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"paragraph"}]},{"type":"blockquote","content":[{"type":"paragraph","content":[{"type":"text","text":"Blockquote"}]}]},{"type":"paragraph","content":[{"type":"text","marks":[{"type":"bold"}],"text":"Bold"}]},{"type":"bullet_list","content":[{"type":"list_item","content":[{"type":"paragraph","content":[{"type":"text","text":"BulletList"}]}]}]},{"type":"paragraph","content":[{"type":"text","marks":[{"type":"code"}],"text":"Code"}]},{"type":"code_block","content":[{"type":"text","text":"CodeBlock"}]},{"type":"code_block","content":[{"type":"text","text":"CodeBlockHighlight??"}]},{"type":"paragraph","content":[{"type":"hard_break"}]},{"type":"heading","attrs":{"level":1},"content":[{"type":"text","text":"Heading 1"}]},{"type":"horizontal_rule"},{"type":"paragraph","content":[{"type":"text","marks":[{"type":"italic"}],"text":"Italic"},{"type":"text","text":" "},{"type":"text","marks":[{"type":"link","attrs":{"href":"#"}}],"text":"Link"}]},{"type":"ordered_list","attrs":{"order":1},"content":[{"type":"list_item","content":[{"type":"paragraph","content":[{"type":"text","text":"OrderedList"}]}]}]},{"type":"paragraph"},{"type":"table","content":[{"type":"table_row","content":[{"type":"table_header","attrs":{"colspan":1,"rowspan":1,"colwidth":null,"background":null},"content":[{"type":"paragraph","content":[{"type":"text","text":"TableHeader"}]}]}]},{"type":"table_row","content":[{"type":"table_cell","attrs":{"colspan":1,"rowspan":1,"colwidth":null,"background":null},"content":[{"type":"paragraph","content":[{"type":"text","text":"TableCell"}]}]}]}]},{"type":"todo_list","content":[{"type":"todo_item","attrs":{"done":true},"content":[{"type":"paragraph","content":[{"type":"text","text":"Checked item"}]}]},{"type":"todo_item","attrs":{"done":false},"content":[{"type":"paragraph","content":[{"type":"text","text":"Unchecked item"}]}]}]},{"type":"paragraph","content":[{"type":"text","marks":[{"type":"strike"}],"text":"Strike"},{"type":"text","text":" "},{"type":"text","marks":[{"type":"underline"}],"text":"Underline"}]}]}`;
+    const savedJson = `{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [{ "type": "text", "text": "paragraph" }]
+    },
+    {
+      "type": "blockquote",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [{ "type": "text", "text": "Blockquote" }]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "marks": [{ "type": "bold" }], "text": "Bold" }
+      ]
+    },
+    {
+      "type": "bullet_list",
+      "content": [
+        {
+          "type": "list_item",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "BulletList" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "marks": [{ "type": "code" }], "text": "Code" }
+      ]
+    },
+    {
+      "type": "code_block",
+      "content": [{ "type": "text", "text": "CodeBlock" }]
+    },
+    {
+      "type": "code_block",
+      "content": [{ "type": "text", "text": "CodeBlockHighlight??" }]
+    },
+    { "type": "paragraph", "content": [{ "type": "hard_break" }] },
+    {
+      "type": "heading",
+      "attrs": { "level": 1 },
+      "content": [{ "type": "text", "text": "Heading 1" }]
+    },
+    { "type": "horizontal_rule" },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "marks": [{ "type": "italic" }], "text": "Italic" },
+        { "type": "text", "text": " " },
+        {
+          "type": "text",
+          "marks": [{ "type": "link", "attrs": { "href": "#" } }],
+          "text": "Link"
+        }
+      ]
+    },
+    {
+      "type": "ordered_list",
+      "attrs": { "order": 1 },
+      "content": [
+        {
+          "type": "list_item",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "OrderedList" }]
+            }
+          ]
+        }
+      ]
+    },
+    { "type": "paragraph" },
+    {
+      "type": "table",
+      "content": [
+        {
+          "type": "table_row",
+          "content": [
+            {
+              "type": "table_header",
+              "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": null,
+                "background": null
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [{ "type": "text", "text": "TableHeader" }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "table_row",
+          "content": [
+            {
+              "type": "table_cell",
+              "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": null,
+                "background": null
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [{ "type": "text", "text": "TableCell" }]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "marks": [{ "type": "strike" }], "text": "Strike" },
+        { "type": "text", "text": " " },
+        {
+          "type": "text",
+          "marks": [{ "type": "underline" }],
+          "text": "Underline"
+        }
+      ]
+    }
+  ]
+}
+`;
 
     // Create an `Editor` instance with some default content. The editor is
     // then passed to the `EditorContent` component as a `prop`
@@ -177,7 +321,7 @@ export default {
       ],
       onUpdate: ({ getJSON }) => {
         this.json = getJSON();
-        console.log(JSON.stringify(this.json));
+        // console.log(JSON.stringify(this.json));
       }
     });
 
