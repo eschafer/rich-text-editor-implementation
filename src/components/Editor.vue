@@ -382,7 +382,7 @@ export default {
       console.log('save to airtable');
       const data = {
         "Name": "vue test", 
-        "Notes": this.json,
+        "Notes": JSON.stringify(this.json),
       }
       fetch("../../.netlify/functions/airtable", {
       method: "POST",
