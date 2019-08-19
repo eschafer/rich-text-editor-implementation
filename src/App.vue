@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-    <h3>Welcome to Netlify Identity Demo in Vue.js</h3>
-    <div v-if="isLoggedIn">
-      <p>Hello {{ username }}</p>
-      <p>
-        <button @click="triggerNetlifyIdentityAction('logout')">Log Out</button>
-      </p>
-    </div>
-    <div v-else>
-      <p>You are not logged in.</p>
-      <p>
-        <button @click="triggerNetlifyIdentityAction('login')">Log In</button>
-        <button @click="triggerNetlifyIdentityAction('signup')">Sign Up</button>
-      </p>
-    </div>
-    <ul>
+    <header v-if="isLoggedIn">
+      <p>Hello {{ username }} <button @click="triggerNetlifyIdentityAction('logout')">Log Out</button></p>
+    </header>
+    <header v-else>
+      <p>You are not logged in. <button @click="triggerNetlifyIdentityAction('login')">Log In</button></p>
+    </header>
+    <h1>Notebook</h1>
+    <!-- <ul>
       <li>
         <router-link :to="{name:'Home'}">Home Page</router-link>
       </li>
@@ -24,7 +17,10 @@
       <li>
         <router-link :to="{name:'Protected'}">Protected Page</router-link>
       </li>
-    </ul>
+      <li>
+        <router-link :to="{name:'App'}">App</router-link>
+      </li>
+    </ul> -->
     <router-view></router-view>
   </div>
 </template>
@@ -109,7 +105,23 @@ export default {
 </script>
 
 <style>
-#app {
+@import url('https://rsms.me/inter/inter.css');
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+header {
+  position: absolute;
+  right: 0;
+}
+
+/* @supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+} */
+
+/* #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -130,7 +142,7 @@ li {
 }
 a {
   color: #42b983;
-}
+} */
 </style>
 
 <!--
