@@ -6,22 +6,9 @@
     <header v-else>
       <p>You are not logged in. <button @click="triggerNetlifyIdentityAction('login')">Log In</button></p>
     </header>
+    </nav>
     <h1>Notebook</h1>
-    <!-- <ul>
-      <li>
-        <router-link :to="{name:'Home'}">Home Page</router-link>
-      </li>
-      <li>
-        <router-link :to="{name:'Public'}">Public Page</router-link>
-      </li>
-      <li>
-        <router-link :to="{name:'Protected'}">Protected Page</router-link>
-      </li>
-      <li>
-        <router-link :to="{name:'App'}">App</router-link>
-      </li>
-    </ul> -->
-    <router-view></router-view>
+    <router-view v-if="this.$store.state.user.user"></router-view>
   </div>
 </template>
 

@@ -132,7 +132,7 @@ import {
 } from "tiptap-extensions";
 
 export default {
-  name: "App",
+  name: "Editor",
   beforeRouteEnter: (to, from, next) => {
     next(vm => {
       if (vm.$store.state.user.user) {

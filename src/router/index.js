@@ -3,10 +3,10 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-import Home from '@/components/Home';
+// import Home from '@/components/Home';
+import Editor from '@/components/Editor';
 import Public from '@/components/Public'
 import Protected from '@/components/Protected'
-import App from '@/components/App'
 
 // import { mapGetters } from 'vuex';
 
@@ -23,7 +23,7 @@ const router = new Router({
         {
             path: '/',
             name: 'Home',
-            component: Home
+            component: Editor
         },
         {
             path: '/public',
@@ -34,11 +34,6 @@ const router = new Router({
             path: '/protected',
             name: 'Protected',
             component: Protected
-        },
-        {
-            path: '/app',
-            name: 'App',
-            component: App
         },
         {
             path: '*',
