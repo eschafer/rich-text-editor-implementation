@@ -89,7 +89,7 @@ export default {
       }
     }
   },
-  created: () => {
+  created: function() {
       netlifyIdentity.on('login', user => {
       this.currentUser = {
         username: user.user_metadata.full_name,
